@@ -12,3 +12,10 @@ Run with:
 pip install -r requirements.txt
 streamlit run app/stego_app.py
 ```
+
+
+generate stego images
+python tools/generate_stego_dataset.py
+
+train model
+python detect/train_detector.py

@@ -11,7 +11,7 @@ import tempfile
 st.set_page_config(page_title="Stego", page_icon="🕵️‍♀️")
 st.title("Image Steganography & AI Detection")
 
-st.header("1️ Hide Message in Image")
+st.header("1️. Hide Message in Image")
 orig = st.file_uploader("Upload an image (PNG preferred)", type=["png","jpg"])
 msg = st.text_area("Enter your secret message")
 if st.button("Generate Stego Image"):
@@ -23,7 +23,7 @@ if st.button("Generate Stego Image"):
         st.image(tmp_out.name, caption="Generated Stego Image Preview")
         st.download_button("Download Stego Image", open(tmp_out.name, "rb"), "stego.png")
 
-st.header("2 Reveal Message from Image")
+st.header("2. Reveal Message from Image")
 stego_img = st.file_uploader("Upload a stego image", type=["png"])
 if st.button("Reveal Message"):
     if stego_img:
@@ -32,7 +32,7 @@ if st.button("Reveal Message"):
         message = reveal_message(tmp_s.name)
         st.success(f"Extracted message: {message}")
 
-st.header("3️ AI Detection (Is it a stego image?)")
+st.header("3️. AI Detection (Is it a stego image?)")
 det_img = st.file_uploader("Upload any image", type=["png","jpg"])
 if st.button("Run AI Detection"):
     if det_img:
